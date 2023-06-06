@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import Context from './context/Context'
+import UserContext from './context/UserContext'
 
 const App = () => {
 
-	const { user } = useContext(Context)
+	const { user, handleUser } = useContext(UserContext)
 
 	return (
 		<main>
@@ -16,6 +16,7 @@ const App = () => {
 					<article>
 						<button
 							className='py-2 px-4 shadow bg-orange-500 border border-orange-500 rounded text-white active:scale-95 focus:outline-none'
+							onClick={handleUser}
 						>
 							Update
 						</button>
