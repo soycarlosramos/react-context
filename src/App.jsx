@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Loader from './Components/Loader'
 
 const App = () => {
 
@@ -20,16 +21,16 @@ const App = () => {
 		}
 	}
 
-	console.log({ user })
 	return (
 		<main>
 			<div className="container mx-auto py-4">
 				<h1 className='text-4xl text-center font-semibold text-zinc-500 mb-4'>React Contex API</h1>
 				<section className='py-4 flex gap-4 justify-evenly'>
+				<Loader />
 					<article>
 						{
 							loader
-								? <pre className='font-semibold'>Loading...</pre>
+								? <Loader />
 								: <pre>{JSON.stringify(user, null, 2)}</pre>
 						}
 					</article>
